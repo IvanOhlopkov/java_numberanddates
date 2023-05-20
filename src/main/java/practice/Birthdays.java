@@ -1,7 +1,5 @@
 package practice;
 
-import net.sf.saxon.expr.parser.Loc;
-
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Locale;
@@ -30,14 +28,14 @@ public class Birthdays {
                 DateTimeFormatter.ofPattern("E").localizedBy(Locale.forLanguageTag("en"));
         String text = "";
 
-        for (int i = 0; ; i++){
-            if (now.isBefore(birhday)){
+        for (int i = 0; ; i++) {
+            if (now.isBefore(birhday)) {
                 break;
             }
             text = text + i + " - " + dateFormat.format(birhday) + " - " + formatter.format(birhday)
                     + System.lineSeparator();
 
-            if (now.isEqual(birhday)){
+            if (now.isEqual(birhday)) {
                 break;
             }
             birhday = birhday.plusYears(1);
